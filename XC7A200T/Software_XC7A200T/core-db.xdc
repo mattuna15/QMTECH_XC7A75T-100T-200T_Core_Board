@@ -523,6 +523,41 @@ set_property IOSTANDARD LVCMOS33 [get_ports {rp_led}]
 #set_property PACKAGE_PIN Y22 [get_ports {rp_gpio29_adc3}]
 #set_property IOSTANDARD LVCMOS33 [get_ports {rp_gpio29_adc3}]
 
+###############################################################################
+## K) PMOD-1 (J11) → J2_IO7,9,11,13 & J2_IO8,10,12,14 (Bank 13, LVCMOS33)
+###############################################################################
+# J11 pin 1 → J2_IO7   → PACKAGE_PIN D26
+set_property PACKAGE_PIN D26 [get_ports {pmod1_pin1}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pmod1_pin1}]
+
+# J11 pin 2 → J2_IO9   → PACKAGE_PIN D25
+set_property PACKAGE_PIN D25 [get_ports {pmod1_pin2}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pmod1_pin2}]
+
+# J11 pin 3 → J2_IO11  → PACKAGE_PIN G26
+set_property PACKAGE_PIN G26 [get_ports {pmod1_pin3}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pmod1_pin3}]
+
+# J11 pin 4 → J2_IO13  → PACKAGE_PIN E23
+set_property PACKAGE_PIN E23 [get_ports {pmod1_pin4}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pmod1_pin4}]
+
+# J11 pin 7 → J2_IO8   → PACKAGE_PIN E26
+set_property PACKAGE_PIN E26 [get_ports {pmod1_pin5}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pmod1_pin5}]
+
+# J11 pin 8 → J2_IO10  → PACKAGE_PIN E25
+set_property PACKAGE_PIN E25 [get_ports {pmod1_pin6}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pmod1_pin6}]
+
+# J11 pin 9 → J2_IO12  → PACKAGE_PIN H26
+set_property PACKAGE_PIN H26 [get_ports {pmod1_pin7}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pmod1_pin7}]
+
+# J11 pin 10 → J2_IO14 → PACKAGE_PIN F23
+set_property PACKAGE_PIN F23 [get_ports {pmod1_pin8}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pmod1_pin8}]
+
 
 ###############################################################################
 ## M) U2 & U4 2×32 Header Constraints (Prefixed with u2_/u4_) – 3.3 V LVCMOS33
@@ -542,113 +577,6 @@ set_property IOSTANDARD LVCMOS33 [get_ports {rp_led}]
 ##  If you do want to use these header lines, make sure they don’t overlap with VGA/Ethernet/
 ##  RP2040/SD-card mappings shown above.
 ###############################################################################
-
-###############################################################################
-## P. Camera Connector (JP1) → J2_IO[45..60] (2×9 header)
-##  • JP1 pin 1 = 3.3 V pull-up (omit)
-##  • JP1 pin 2 = GND (omit)
-##  • JP1 pin 3…18 map to J2_IO60 down to J2_IO45
-###############################################################################
-
-# JP1 pin 3  → J2_IO60 → PACKAGE_PIN R5   (Bank 34)
-set_property PACKAGE_PIN R5 [get_ports {cam_p1}]
-set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p1}]
-
-# JP1 pin 4  → J2_IO59 → PACKAGE_PIN T5   (Bank 34)
-set_property PACKAGE_PIN T5 [get_ports {cam_p2}]
-set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p2}]
-
-# JP1 pin 5  → J2_IO58 → PACKAGE_PIN P5   (Bank 34)
-set_property PACKAGE_PIN P5 [get_ports {cam_p3}]
-set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p3}]
-
-# JP1 pin 6  → J2_IO57 → PACKAGE_PIN P6   (Bank 34)
-set_property PACKAGE_PIN P6 [get_ports {cam_p4}]
-set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p4}]
-
-# JP1 pin 7  → J2_IO56 → PACKAGE_PIN AB26 (Bank 13)
-set_property PACKAGE_PIN AB26 [get_ports {cam_p5}]
-set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p5}]
-
-# JP1 pin 8  → J2_IO55 → PACKAGE_PIN AC26 (Bank 13)
-set_property PACKAGE_PIN AC26 [get_ports {cam_p6}]
-set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p6}]
-
-# JP1 pin 9  → J2_IO54 → PACKAGE_PIN W25  (Bank 13)
-set_property PACKAGE_PIN W25 [get_ports {cam_p7}]
-set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p7}]
-
-# JP1 pin 10 → J2_IO53 → PACKAGE_PIN Y26  (Bank 13)
-set_property PACKAGE_PIN Y26 [get_ports {cam_p8}]
-set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p8}]
-
-# JP1 pin 11 → J2_IO52 → PACKAGE_PIN Y21  (Bank 13)
-set_property PACKAGE_PIN Y21 [get_ports {cam_p9}]
-set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p9}]
-
-# JP1 pin 12 → J2_IO51 → PACKAGE_PIN W21  (Bank 13)
-set_property PACKAGE_PIN W21 [get_ports {cam_p10}]
-set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p10}]
-
-# JP1 pin 13 → J2_IO50 → PACKAGE_PIN AB24 (Bank 13)
-set_property PACKAGE_PIN AB24 [get_ports {cam_p11}]
-set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p11}]
-
-# JP1 pin 14 → J2_IO49 → PACKAGE_PIN AC24 (Bank 13)
-set_property PACKAGE_PIN AC24 [get_ports {cam_p12}]
-set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p12}]
-
-# JP1 pin 15 → J2_IO48 → PACKAGE_PIN Y25  (Bank 13)
-set_property PACKAGE_PIN Y25 [get_ports {cam_p13}]
-set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p13}]
-
-# JP1 pin 16 → J2_IO47 → PACKAGE_PIN AA25 (Bank 13)
-set_property PACKAGE_PIN AA25 [get_ports {cam_p14}]
-set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p14}]
-
-# JP1 pin 17 → J2_IO46 → PACKAGE_PIN Y22  (Bank 13)
-set_property PACKAGE_PIN Y22 [get_ports {cam_p15}]
-set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p15}]
-
-# JP1 pin 18 → J2_IO45 → PACKAGE_PIN Y23  (Bank 13)
-set_property PACKAGE_PIN Y23 [get_ports {cam_p16}]
-set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p16}]
-
-###############################################################################
-## Q) PMOD-2 (J10) → J2_IO17,19,21,23 & J2_IO18,20,22,24 (Bank 13, LVCMOS33)
-###############################################################################
-# J10 pin 1 → J2_IO17  → PACKAGE_PIN J25
-set_property PACKAGE_PIN J25 [get_ports {pmod2_pin1}]
-set_property IOSTANDARD LVCMOS33 [get_ports {pmod2_pin1}]
-
-# J10 pin 2 → J2_IO19  → PACKAGE_PIN G20
-set_property PACKAGE_PIN G20 [get_ports {pmod2_pin2}]
-set_property IOSTANDARD LVCMOS33 [get_ports {pmod2_pin2}]
-
-# J10 pin 3 → J2_IO21  → PACKAGE_PIN H21
-set_property PACKAGE_PIN H21 [get_ports {pmod2_pin3}]
-set_property IOSTANDARD LVCMOS33 [get_ports {pmod2_pin3}]
-
-# J10 pin 4 → J2_IO23  → PACKAGE_PIN J21
-set_property PACKAGE_PIN J21 [get_ports {pmod2_pin4}]
-set_property IOSTANDARD LVCMOS33 [get_ports {pmod2_pin4}]
-
-# J10 pin 7 → J2_IO18  → PACKAGE_PIN J26
-set_property PACKAGE_PIN J26 [get_ports {pmod2_pin5}]
-set_property IOSTANDARD LVCMOS33 [get_ports {pmod2_pin5}]
-
-# J10 pin 8 → J2_IO20  → PACKAGE_PIN G21
-set_property PACKAGE_PIN G21 [get_ports {pmod2_pin6}]
-set_property IOSTANDARD LVCMOS33 [get_ports {pmod2_pin6}]
-
-# J10 pin 9 → J2_IO22  → PACKAGE_PIN H22
-set_property PACKAGE_PIN H22 [get_ports {pmod2_pin7}]
-set_property IOSTANDARD LVCMOS33 [get_ports {pmod2_pin7}]
-
-# J10 pin 10 → J2_IO24 → PACKAGE_PIN K21
-set_property PACKAGE_PIN K21 [get_ports {pmod2_pin8}]
-set_property IOSTANDARD LVCMOS33 [get_ports {pmod2_pin8}]
-
 
 ## ----------------------------------------------------------------------
 ## U2 HDR_32×2 (Bank 15 → pins 7–26, Bank 13 → pins 41–56)
@@ -766,3 +694,113 @@ set_property IOSTANDARD LVCMOS33 [get_ports {pmod2_pin8}]
 ## ======================================================================
 ## End of Full constraints.xdc (corrected)
 ## ======================================================================
+
+
+###############################################################################
+## P. Camera Connector (JP1) → J2_IO[45..60] (2×9 header)
+##  • JP1 pin 1 = 3.3 V pull-up (omit)
+##  • JP1 pin 2 = GND (omit)
+##  • JP1 pin 3…18 map to J2_IO60 down to J2_IO45
+###############################################################################
+
+# JP1 pin 3  → J2_IO60 → PACKAGE_PIN R5   (Bank 34)
+set_property PACKAGE_PIN R5 [get_ports {cam_p1}]
+set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p1}]
+
+# JP1 pin 4  → J2_IO59 → PACKAGE_PIN T5   (Bank 34)
+set_property PACKAGE_PIN T5 [get_ports {cam_p2}]
+set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p2}]
+
+# JP1 pin 5  → J2_IO58 → PACKAGE_PIN P5   (Bank 34)
+set_property PACKAGE_PIN P5 [get_ports {cam_p3}]
+set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p3}]
+
+# JP1 pin 6  → J2_IO57 → PACKAGE_PIN P6   (Bank 34)
+set_property PACKAGE_PIN P6 [get_ports {cam_p4}]
+set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p4}]
+
+# JP1 pin 7  → J2_IO56 → PACKAGE_PIN AB26 (Bank 13)
+set_property PACKAGE_PIN AB26 [get_ports {cam_p5}]
+set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p5}]
+
+# JP1 pin 8  → J2_IO55 → PACKAGE_PIN AC26 (Bank 13)
+set_property PACKAGE_PIN AC26 [get_ports {cam_p6}]
+set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p6}]
+
+# JP1 pin 9  → J2_IO54 → PACKAGE_PIN W25  (Bank 13)
+set_property PACKAGE_PIN W25 [get_ports {cam_p7}]
+set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p7}]
+
+# JP1 pin 10 → J2_IO53 → PACKAGE_PIN Y26  (Bank 13)
+set_property PACKAGE_PIN Y26 [get_ports {cam_p8}]
+set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p8}]
+
+# JP1 pin 11 → J2_IO52 → PACKAGE_PIN Y21  (Bank 13)
+set_property PACKAGE_PIN Y21 [get_ports {cam_p9}]
+set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p9}]
+
+# JP1 pin 12 → J2_IO51 → PACKAGE_PIN W21  (Bank 13)
+set_property PACKAGE_PIN W21 [get_ports {cam_p10}]
+set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p10}]
+
+# JP1 pin 13 → J2_IO50 → PACKAGE_PIN AB24 (Bank 13)
+set_property PACKAGE_PIN AB24 [get_ports {cam_p11}]
+set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p11}]
+
+# JP1 pin 14 → J2_IO49 → PACKAGE_PIN AC24 (Bank 13)
+set_property PACKAGE_PIN AC24 [get_ports {cam_p12}]
+set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p12}]
+
+# JP1 pin 15 → J2_IO48 → PACKAGE_PIN Y25  (Bank 13)
+set_property PACKAGE_PIN Y25 [get_ports {cam_p13}]
+set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p13}]
+
+# JP1 pin 16 → J2_IO47 → PACKAGE_PIN AA25 (Bank 13)
+set_property PACKAGE_PIN AA25 [get_ports {cam_p14}]
+set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p14}]
+
+# JP1 pin 17 → J2_IO46 → PACKAGE_PIN Y22  (Bank 13)
+set_property PACKAGE_PIN Y22 [get_ports {cam_p15}]
+set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p15}]
+
+# JP1 pin 18 → J2_IO45 → PACKAGE_PIN Y23  (Bank 13)
+set_property PACKAGE_PIN Y23 [get_ports {cam_p16}]
+set_property IOSTANDARD   LVCMOS33 [get_ports {cam_p16}]
+
+###############################################################################
+## Q) PMOD-2 (J10) → J2_IO17,19,21,23 & J2_IO18,20,22,24 (Bank 13, LVCMOS33)
+###############################################################################
+# J10 pin 1 → J2_IO17  → PACKAGE_PIN J25
+set_property PACKAGE_PIN J25 [get_ports {pmod2_pin1}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pmod2_pin1}]
+
+# J10 pin 2 → J2_IO19  → PACKAGE_PIN G20
+set_property PACKAGE_PIN G20 [get_ports {pmod2_pin2}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pmod2_pin2}]
+
+# J10 pin 3 → J2_IO21  → PACKAGE_PIN H21
+set_property PACKAGE_PIN H21 [get_ports {pmod2_pin3}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pmod2_pin3}]
+
+# J10 pin 4 → J2_IO23  → PACKAGE_PIN J21
+set_property PACKAGE_PIN J21 [get_ports {pmod2_pin4}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pmod2_pin4}]
+
+# J10 pin 7 → J2_IO18  → PACKAGE_PIN J26
+set_property PACKAGE_PIN J26 [get_ports {pmod2_pin5}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pmod2_pin5}]
+
+# J10 pin 8 → J2_IO20  → PACKAGE_PIN G21
+set_property PACKAGE_PIN G21 [get_ports {pmod2_pin6}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pmod2_pin6}]
+
+# J10 pin 9 → J2_IO22  → PACKAGE_PIN H22
+set_property PACKAGE_PIN H22 [get_ports {pmod2_pin7}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pmod2_pin7}]
+
+# J10 pin 10 → J2_IO24 → PACKAGE_PIN K21
+set_property PACKAGE_PIN K21 [get_ports {pmod2_pin8}]
+set_property IOSTANDARD LVCMOS33 [get_ports {pmod2_pin8}]
+
+
+

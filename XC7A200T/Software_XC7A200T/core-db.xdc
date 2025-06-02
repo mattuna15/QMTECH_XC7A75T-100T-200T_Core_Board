@@ -164,111 +164,125 @@ set_property IOSTANDARD LVCMOS33 [get_ports {fpga_cclk}]
 set_property PULLUP true  [get_ports {fpga_cclk}]
 
 
-###############################################################################
-## E) Ethernet PHY (RTL8211EG) via J2_IOxx → U2 (Bank 13/15, LVCMOS33)
-###############################################################################
+## ─────────────────────────────────────────────────────────────────────────
+##  Ethernet PHY (RTL8211EG) → J3_IOxx → FPGA (U4) PACKAGE_PIN (LVCMOS33)
+## ─────────────────────────────────────────────────────────────────────────
 
-## RGMII Transmit
-# eth_txd0 → J2_IO46 → Y23   (Bank 13)
-set_property PACKAGE_PIN Y23 [get_ports {eth_txd0}]
-set_property IOSTANDARD LVCMOS33 [get_ports {eth_txd0}]
-
-# eth_txd1 → J2_IO48 → Y22   (Bank 13)
-set_property PACKAGE_PIN Y22 [get_ports {eth_txd1}]
-set_property IOSTANDARD LVCMOS33 [get_ports {eth_txd1}]
-
-# eth_txd2 → J2_IO50 → AA25  (Bank 13)
-set_property PACKAGE_PIN AA25 [get_ports {eth_txd2}]
-set_property IOSTANDARD LVCMOS33 [get_ports {eth_txd2}]
-
-# eth_txd3 → J2_IO52 → Y25   (Bank 13)
-set_property PACKAGE_PIN Y25 [get_ports {eth_txd3}]
-set_property IOSTANDARD LVCMOS33 [get_ports {eth_txd3}]
-
-# eth_tx_en → J2_IO54 → AC24  (Bank 13)
-set_property PACKAGE_PIN AC24 [get_ports {eth_tx_en}]
-set_property IOSTANDARD LVCMOS33 [get_ports {eth_tx_en}]
-
-# eth_tx_clk → J2_IO56 → AB24 (Bank 13)
-set_property PACKAGE_PIN AB24 [get_ports {eth_tx_clk}]
-set_property IOSTANDARD LVCMOS33 [get_ports {eth_tx_clk}]
-
-# eth_tx_er (optional) → J2_IO58 → W21 (Bank 13)
-#set_property PACKAGE_PIN W21 [get_ports {eth_tx_er}]
-#set_property IOSTANDARD LVCMOS33 [get_ports {eth_tx_er}]
-
-## RGMII Receive
-# eth_rxd0 → J2_IO45 → V21  (Bank 13)
-set_property PACKAGE_PIN V21 [get_ports {eth_rxd0}]
-set_property IOSTANDARD LVCMOS33 [get_ports {eth_rxd0}]
-
-# eth_rxd1 → J2_IO47 → U21  (Bank 13)
-set_property PACKAGE_PIN U21 [get_ports {eth_rxd1}]
-set_property IOSTANDARD LVCMOS33 [get_ports {eth_rxd1}]
-
-# eth_rxd2 → J2_IO49 → V23  (Bank 13)
-set_property PACKAGE_PIN V23 [get_ports {eth_rxd2}]
-set_property IOSTANDARD LVCMOS33 [get_ports {eth_rxd2}]
-
-# eth_rxd3 → J2_IO51 → W23  (Bank 13)
-set_property PACKAGE_PIN W23 [get_ports {eth_rxd3}]
-set_property IOSTANDARD LVCMOS33 [get_ports {eth_rxd3}]
-
-# eth_rx_dv → J2_IO53 → Y23  (Bank 13)
-set_property PACKAGE_PIN Y23 [get_ports {eth_rx_dv}]
-set_property IOSTANDARD LVCMOS33 [get_ports {eth_rx_dv}]
-
-# eth_rx_clk → J2_IO55 → Y22 (Bank 13)
-set_property PACKAGE_PIN Y22 [get_ports {eth_rx_clk}]
-set_property IOSTANDARD LVCMOS33 [get_ports {eth_rx_clk}]
-
-# eth_rx_er (optional) → J2_IO57 → AA25 (Bank 13)
-#set_property PACKAGE_PIN AA25 [get_ports {eth_rx_er}]
-#set_property IOSTANDARD LVCMOS33 [get_ports {eth_rx_er}]
-
-## MDIO / MDC
-# eth_mdio → J2_IO54 → Y26  (Bank 13)
-set_property PACKAGE_PIN Y26 [get_ports {eth_mdio}]
-set_property IOSTANDARD LVCMOS33 [get_ports {eth_mdio}]
-
-# eth_mdc  → J2_IO53 → W25  (Bank 13)
-set_property PACKAGE_PIN W25 [get_ports {eth_mdc}]
+# MDC       → J3_IO16 → U4_PACKAGE_PIN  A3  (Bank 35)
+set_property PACKAGE_PIN A3 [get_ports {eth_mdc}]
 set_property IOSTANDARD LVCMOS33 [get_ports {eth_mdc}]
 
-## PHY LEDs
-# eth_led0 → J2_IO50 → W25   (Bank 13)
-set_property PACKAGE_PIN W25 [get_ports {eth_led0}]
-set_property IOSTANDARD LVCMOS33 [get_ports {eth_led0}]
+# MDIO      → J3_IO15 → U4_PACKAGE_PIN  A2  (Bank 35)
+set_property PACKAGE_PIN A2 [get_ports {eth_mdio}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_mdio}]
 
-# eth_led1 → J2_IO51 → AC26  (Bank 13)
-set_property PACKAGE_PIN AC26 [get_ports {eth_led1}]
-set_property IOSTANDARD LVCMOS33 [get_ports {eth_led1}]
+# GTX_CLK   → J3_IO29 → U4_PACKAGE_PIN  B2  (Bank 35)
+set_property PACKAGE_PIN B2 [get_ports {eth_gtx_clk}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_gtx_clk}]
 
-# eth_led2 → J2_IO52 → AB26  (Bank 13)
-set_property PACKAGE_PIN AB26 [get_ports {eth_led2}]
-set_property IOSTANDARD LVCMOS33 [get_ports {eth_led2}]
+# TXEN      → J3_IO28 → U4_PACKAGE_PIN  C2  (Bank 35)
+set_property PACKAGE_PIN C2 [get_ports {eth_tx_en}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_tx_en}]
 
-## Collision / Carrier Sense (optional)
-# eth_col → J2_IO40 → W21  (Bank 13)
-#set_property PACKAGE_PIN W21 [get_ports {eth_col}]
-#set_property IOSTANDARD LVCMOS33 [get_ports {eth_col}]
+# TXCLK     → J3_IO22 → U4_PACKAGE_PIN  C1  (Bank 35)
+set_property PACKAGE_PIN C1 [get_ports {eth_tx_clk}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_tx_clk}]
 
-# eth_crs → J2_IO42 → Y21  (Bank 13)
-#set_property PACKAGE_PIN Y21 [get_ports {eth_crs}]
-#set_property IOSTANDARD LVCMOS33 [get_ports {eth_crs}]
+# TXER      → J3_IO17 → U4_PACKAGE_PIN  B1  (Bank 35)
+set_property PACKAGE_PIN B1 [get_ports {eth_tx_er}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_tx_er}]
 
-## PHY Reset + Interrupt + Switch-Enable (optional)
-# eth_rstn  → J2_IO38 → V21  (Bank 13)
-#set_property PACKAGE_PIN V21 [get_ports {eth_rstn}]
-#set_property IOSTANDARD LVCMOS33 [get_ports {eth_rstn}]
+# TXD0      → J3_IO27 → U4_PACKAGE_PIN  D3  (Bank 35)
+set_property PACKAGE_PIN D3 [get_ports {eth_txd[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_txd[0]}]
 
-# eth_intb  → J2_IO36 → U21  (Bank 13)
-#set_property PACKAGE_PIN U21 [get_ports {eth_intb}]
-#set_property IOSTANDARD LVCMOS33 [get_ports {eth_intb}]
+# TXD1      → J3_IO25 → U4_PACKAGE_PIN  D1  (Bank 35)
+set_property PACKAGE_PIN D1 [get_ports {eth_txd[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_txd[1]}]
 
-# eth_enswreg → J2_IO37 → V23 (Bank 13)
-#set_property PACKAGE_PIN V23 [get_ports {eth_enswreg}]
-#set_property IOSTANDARD LVCMOS33 [get_ports {eth_enswreg}]
+# TXD2      → J3_IO24 → U4_PACKAGE_PIN  E3  (Bank 35)
+set_property PACKAGE_PIN E3 [get_ports {eth_txd[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_txd[2]}]
+
+# TXD3      → J3_IO23 → U4_PACKAGE_PIN  E2  (Bank 35)
+set_property PACKAGE_PIN E2 [get_ports {eth_txd[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_txd[3]}]
+
+# TXD4      → J3_IO21 → U4_PACKAGE_PIN  F3  (Bank 35)
+set_property PACKAGE_PIN F3 [get_ports {eth_txd[4]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_txd[4]}]
+
+# TXD5      → J3_IO20 → U4_PACKAGE_PIN  F2  (Bank 35)
+set_property PACKAGE_PIN F2 [get_ports {eth_txd[5]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_txd[5]}]
+
+# TXD6      → J3_IO19 → U4_PACKAGE_PIN  H3  (Bank 35)
+set_property PACKAGE_PIN H3 [get_ports {eth_txd[6]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_txd[6]}]
+
+# TXD7      → J3_IO18 → U4_PACKAGE_PIN  H2  (Bank 35)
+set_property PACKAGE_PIN H2 [get_ports {eth_txd[7]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_txd[7]}]
+
+# RXDV      → J3_IO42 → U4_PACKAGE_PIN  G1  (Bank 34)
+set_property PACKAGE_PIN G1 [get_ports {eth_rx_dv}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_rx_dv}]
+
+# RXCLK     → J3_IO37 → U4_PACKAGE_PIN  H1  (Bank 34)
+set_property PACKAGE_PIN H1 [get_ports {eth_rx_clk}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_rx_clk}]
+
+# RXER_AN1  → J3_IO32 → U4_PACKAGE_PIN  K2  (Bank 34)
+set_property PACKAGE_PIN K2 [get_ports {eth_rx_er}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_rx_er}]
+
+# RXD0      → J3_IO41 → U4_PACKAGE_PIN  K1  (Bank 34)
+set_property PACKAGE_PIN K1 [get_ports {eth_rxd[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_rxd[0]}]
+
+# RXD1      → J3_IO40 → U4_PACKAGE_PIN  J1  (Bank 34)
+set_property PACKAGE_PIN J1 [get_ports {eth_rxd[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_rxd[1]}]
+
+# RXD2      → J3_IO39 → U4_PACKAGE_PIN  L3  (Bank 34)
+set_property PACKAGE_PIN L3 [get_ports {eth_rxd[2]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_rxd[2]}]
+
+# RXD3      → J3_IO38 → U4_PACKAGE_PIN  M1  (Bank 34)
+set_property PACKAGE_PIN M1 [get_ports {eth_rxd[3]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_rxd[3]}]
+
+# RXD4      → J3_IO36 → U4_PACKAGE_PIN  M2  (Bank 34)
+set_property PACKAGE_PIN M2 [get_ports {eth_rxd[4]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_rxd[4]}]
+
+# RXD5      → J3_IO35 → U4_PACKAGE_PIN  L2  (Bank 34)
+set_property PACKAGE_PIN L2 [get_ports {eth_rxd[5]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_rxd[5]}]
+
+# RXD6      → J3_IO34 → U4_PACKAGE_PIN  N3  (Bank 34)
+set_property PACKAGE_PIN N3 [get_ports {eth_rxd[6]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_rxd[6]}]
+
+# RXD7      → J3_IO33 → U4_PACKAGE_PIN  N2  (Bank 34)
+set_property PACKAGE_PIN N2 [get_ports {eth_rxd[7]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_rxd[7]}]
+
+# COL/Mode  → J3_IO31 → U4_PACKAGE_PIN  R3  (Bank 34)
+set_property PACKAGE_PIN R3 [get_ports {eth_col}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_col}]
+
+# CRS       → J3_IO30 → U4_PACKAGE_PIN  P3  (Bank 34)
+set_property PACKAGE_PIN P3 [get_ports {eth_crs}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_crs}]
+
+# PHYRSTB   → J3_IO26 → U4_PACKAGE_PIN  P4  (Bank 34)
+set_property PACKAGE_PIN P4 [get_ports {eth_rstn}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_rstn}]
+
+# INTB      → J3_IO56 → U4_PACKAGE_PIN  N4  (Bank 34)
+set_property PACKAGE_PIN N4 [get_ports {eth_intb}]
+set_property IOSTANDARD LVCMOS33 [get_ports {eth_intb}]
 
 
 ###############################################################################

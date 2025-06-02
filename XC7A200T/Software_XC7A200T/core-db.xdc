@@ -322,57 +322,65 @@ set_property IOSTANDARD LVCMOS33 [get_ports {sd_dat2}]
 ## G) VGA Output via J3_IOxx → U4 (Bank 35, LVCMOS33)
 ###############################################################################
 
-# vga_red0   → J3_IO46 → PACKAGE_PIN B4
-set_property PACKAGE_PIN B4 [get_ports {vga_red0}]
-set_property IOSTANDARD LVCMOS33 [get_ports {vga_red0}]
+## ─────────────────────────────────────────────────────────────────────────
+## VGA (4R,4G,4B,HSYNC,VSYNC) via J3_IOxx → FPGA (U4) PACKAGE_PIN (LVCMOS33)
+## ─────────────────────────────────────────────────────────────────────────
 
-# vga_red1   → J3_IO47 → PACKAGE_PIN A4
-set_property PACKAGE_PIN A4 [get_ports {vga_red1}]
-set_property IOSTANDARD LVCMOS33 [get_ports {vga_red1}]
+# RED[3] (MSB) → J3_IO57 → U4_PACKAGE_PIN B5
+set_property PACKAGE_PIN B5 [get_ports {vga_red3}]
+set_property IOSTANDARD LVCMOS33 [get_ports {vga_red3}]
 
-# vga_red2   → J3_IO48 → PACKAGE_PIN D3
-set_property PACKAGE_PIN D3 [get_ports {vga_red2}]
+# RED[2]       → J3_IO56 → U4_PACKAGE_PIN A5
+set_property PACKAGE_PIN A5 [get_ports {vga_red2}]
 set_property IOSTANDARD LVCMOS33 [get_ports {vga_red2}]
 
-# vga_green0 → J3_IO49 → PACKAGE_PIN C3
-set_property PACKAGE_PIN C3 [get_ports {vga_green0}]
-set_property IOSTANDARD LVCMOS33 [get_ports {vga_green0}]
+# RED[1]       → J3_IO59 → U4_PACKAGE_PIN B4
+set_property PACKAGE_PIN B4 [get_ports {vga_red1}]
+set_property IOSTANDARD LVCMOS33 [get_ports {vga_red1}]
 
-# vga_green1 → J3_IO50 → PACKAGE_PIN F3
+# RED[0] (LSB) → J3_IO58 → U4_PACKAGE_PIN A4
+set_property PACKAGE_PIN A4 [get_ports {vga_red0}]
+set_property IOSTANDARD LVCMOS33 [get_ports {vga_red0}]
+
+# GREEN[3] (MSB) → J3_IO51 → U4_PACKAGE_PIN D3
+set_property PACKAGE_PIN D3 [get_ports {vga_green3}]
+set_property IOSTANDARD LVCMOS33 [get_ports {vga_green3}]
+
+# GREEN[2]       → J3_IO50 → U4_PACKAGE_PIN C3
+set_property PACKAGE_PIN C3 [get_ports {vga_green2}]
+set_property IOSTANDARD LVCMOS33 [get_ports {vga_green2}]
+
+# GREEN[1]       → J3_IO53 → U4_PACKAGE_PIN F3
 set_property PACKAGE_PIN F3 [get_ports {vga_green1}]
 set_property IOSTANDARD LVCMOS33 [get_ports {vga_green1}]
 
-# vga_green2 → J3_IO51 → PACKAGE_PIN E3
-set_property PACKAGE_PIN E3 [get_ports {vga_green2}]
-set_property IOSTANDARD LVCMOS33 [get_ports {vga_green2}]
+# GREEN[0] (LSB) → J3_IO52 → U4_PACKAGE_PIN E3
+set_property PACKAGE_PIN E3 [get_ports {vga_green0}]
+set_property IOSTANDARD LVCMOS33 [get_ports {vga_green0}]
 
-# vga_blue0  → J3_IO52 → PACKAGE_PIN C2
-set_property PACKAGE_PIN C2 [get_ports {vga_blue0}]
-set_property IOSTANDARD LVCMOS33 [get_ports {vga_blue0}]
+# BLUE[3] (MSB)  → J3_IO46 → U4_PACKAGE_PIN D1
+set_property PACKAGE_PIN D1 [get_ports {vga_blue3}]
+set_property IOSTANDARD LVCMOS33 [get_ports {vga_blue3}]
 
-# vga_blue1  → J3_IO53 → PACKAGE_PIN B2
-set_property PACKAGE_PIN B2 [get_ports {vga_blue1}]
-set_property IOSTANDARD LVCMOS33 [get_ports {vga_blue1}]
-
-# vga_blue2  → J3_IO54 → PACKAGE_PIN A3
-set_property PACKAGE_PIN A3 [get_ports {vga_blue2}]
+# BLUE[2]        → J3_IO45 → U4_PACKAGE_PIN E2
+set_property PACKAGE_PIN E2 [get_ports {vga_blue2}]
 set_property IOSTANDARD LVCMOS33 [get_ports {vga_blue2}]
 
-# vga_hsync  → J3_IO55 → PACKAGE_PIN A2
-set_property PACKAGE_PIN A2 [get_ports {vga_hsync}]
+# BLUE[1]        → J3_IO48 → U4_PACKAGE_PIN F2
+set_property PACKAGE_PIN F2 [get_ports {vga_blue1}]
+set_property IOSTANDARD LVCMOS33 [get_ports {vga_blue1}]
+
+# BLUE[0] (LSB)  → J3_IO47 → U4_PACKAGE_PIN E1
+set_property PACKAGE_PIN E1 [get_ports {vga_blue0}]
+set_property IOSTANDARD LVCMOS33 [get_ports {vga_blue0}]
+
+# HSYNC          → J3_IO44 → U4_PACKAGE_PIN C1
+set_property PACKAGE_PIN C1 [get_ports {vga_hsync}]
 set_property IOSTANDARD LVCMOS33 [get_ports {vga_hsync}]
 
-# vga_vsync  → J3_IO56 → PACKAGE_PIN C1
-set_property PACKAGE_PIN C1 [get_ports {vga_vsync}]
+# VSYNC          → J3_IO43 → U4_PACKAGE_PIN B1
+set_property PACKAGE_PIN B1 [get_ports {vga_vsync}]
 set_property IOSTANDARD LVCMOS33 [get_ports {vga_vsync}]
-
-# vga_sda    → J3_IO57 → PACKAGE_PIN B1
-set_property PACKAGE_PIN B1 [get_ports {vga_sda}]
-set_property IOSTANDARD LVCMOS33 [get_ports {vga_sda}]
-
-# vga_scl    → J3_IO58 → PACKAGE_PIN F2
-set_property PACKAGE_PIN F2 [get_ports {vga_scl}]
-set_property IOSTANDARD LVCMOS33 [get_ports {vga_scl}]
 
 
 ###############################################################################
